@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29025.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{203DA5BB-C845-403A-AAFA-AB25C0CFC996}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hangfire.Dashboard.Customize", "src\Hangfire.Dashboard.Customize\Hangfire.Dashboard.Customize.csproj", "{524D1FA5-21AA-4BA7-A6FA-A37F055BECC1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sample", "sample", "{FD0689F6-587F-4E07-90A7-554E07EC22EA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreSample", "sample\AspNetCoreSample\AspNetCoreSample.csproj", "{62A1F54C-8BCF-4097-9E72-75B78A93166D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleOwinSample", "sample\ConsoleOwinSample\ConsoleOwinSample.csproj", "{53D5ED4E-1546-4761-B4B1-A5A0E28F063F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "assets", "assets", "{3C9DE7D1-AFC2-41FB-84B0-6CA9B0D37224}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		CHANGES.md = CHANGES.md
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{524D1FA5-21AA-4BA7-A6FA-A37F055BECC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{524D1FA5-21AA-4BA7-A6FA-A37F055BECC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{524D1FA5-21AA-4BA7-A6FA-A37F055BECC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{524D1FA5-21AA-4BA7-A6FA-A37F055BECC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62A1F54C-8BCF-4097-9E72-75B78A93166D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62A1F54C-8BCF-4097-9E72-75B78A93166D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62A1F54C-8BCF-4097-9E72-75B78A93166D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62A1F54C-8BCF-4097-9E72-75B78A93166D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53D5ED4E-1546-4761-B4B1-A5A0E28F063F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53D5ED4E-1546-4761-B4B1-A5A0E28F063F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53D5ED4E-1546-4761-B4B1-A5A0E28F063F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53D5ED4E-1546-4761-B4B1-A5A0E28F063F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{524D1FA5-21AA-4BA7-A6FA-A37F055BECC1} = {203DA5BB-C845-403A-AAFA-AB25C0CFC996}
+		{62A1F54C-8BCF-4097-9E72-75B78A93166D} = {FD0689F6-587F-4E07-90A7-554E07EC22EA}
+		{53D5ED4E-1546-4761-B4B1-A5A0E28F063F} = {FD0689F6-587F-4E07-90A7-554E07EC22EA}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {929FEEE1-FFBA-42FF-850B-051879DF95FA}
+	EndGlobalSection
+EndGlobal
