@@ -4,6 +4,10 @@ Customize the title of your [Hangfire](https://www.hangfire.io) Dashboard.
 
 ![Hangfire.Dashboard.Customize screenshot](assets/hangfire-dashboard-customize-small.png)
 
+## Give a Star! :star:
+
+If you like or are using this project please give it a star. Thanks!
+
 ## Getting started
 
 Install the [Hangfire.Dashboard.Customize](https://www.nuget.org/packages/Hangfire.Dashboard.Customize/) package from NuGet:
