@@ -1,1 +1,1 @@
-See: https://github.com/caioproiete/hangfire-dashboard-customize/releases
+See: https://github.com/augustoproiete/hangfire-dashboard-customize/releases
