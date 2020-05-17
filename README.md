@@ -52,6 +52,10 @@ app.UseHangfireDashboardCustomOptions(new HangfireDashboardCustomOptions
 });
 ```
 
+## Release History
+
+Click on the [Releases](https://github.com/augustoproiete/hangfire-dashboard-customize/releases) tab on GitHub.
+
 ---
 
 _Copyright &copy; 2019-2020 C. Augusto Proiete & Contributors - Provided under the [Apache License, Version 2.0](http://apache.org/licenses/LICENSE-2.0.html)._
