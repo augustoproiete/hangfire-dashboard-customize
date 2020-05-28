@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("ConsoleOwinSample")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("caioproiete.net")]
+[assembly: AssemblyCompany("augustoproiete.net")]
 [assembly: AssemblyProduct("Serilog.Sinks.ExcelDnaLogDisplay")]
-[assembly: AssemblyCopyright("Copyright © 2019 Caio Proiete and Contributors")]
+[assembly: AssemblyCopyright("Copyright 2019-2020 C. Augusto Proiete & Contributors")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
