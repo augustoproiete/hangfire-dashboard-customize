@@ -13,6 +13,7 @@
     <GenerateAssemblyVersionAttribute>true</GenerateAssemblyVersionAttribute>
     <AssemblyOriginatorKeyFile>../../assets/hangfire-dashboard-customize.snk</AssemblyOriginatorKeyFile>
     <PublicSign Condition=" '$(OS)' != 'Windows_NT' ">true</PublicSign>
+    <MinClientVersion>3.3</MinClientVersion>
     <PackageId>Hangfire.Dashboard.Customize</PackageId>
     <PackageTags>hangfire;dashboard;customize</PackageTags>
     <PackageProjectUrl>https://github.com/augustoproiete/hangfire-dashboard-customize</PackageProjectUrl>
