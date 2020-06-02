@@ -1,4 +1,4 @@
-# Hangfire.Dashboard.Customize [![NuGet Version](https://img.shields.io/nuget/v/Hangfire.Dashboard.Customize.svg?style=flat)](https://www.nuget.org/packages/Hangfire.Dashboard.Customize/) [![License](https://img.shields.io/github/license/augustoproiete/hangfire-dashboard-customize.svg)](LICENSE)
+# Hangfire.Dashboard.Customize [![NuGet Version](https://img.shields.io/nuget/v/Hangfire.Dashboard.Customize.svg?style=flat)](https://www.nuget.org/packages/Hangfire.Dashboard.Customize/) [![Stack Overflow](https://img.shields.io/badge/stack%20overflow-hangfire-orange.svg)](http://stackoverflow.com/questions/tagged/hangfire)
 
 Customize the title of your [Hangfire](https://www.hangfire.io) Dashboard.
 
