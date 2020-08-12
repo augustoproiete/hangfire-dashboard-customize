@@ -1,14 +1,22 @@
-# Hangfire.Dashboard.Customize [![NuGet Version](https://img.shields.io/nuget/v/Hangfire.Dashboard.Customize.svg?style=flat)](https://www.nuget.org/packages/Hangfire.Dashboard.Customize/) [![Stack Overflow](https://img.shields.io/badge/stack%20overflow-hangfire-orange.svg)](http://stackoverflow.com/questions/tagged/hangfire)
+| README.md |
+|:---|
+
+<h1 align="center">Hangfire.Dashboard.Customize</h1>
+<div align="center">
 
 Customize the title of your [Hangfire](https://www.hangfire.io) Dashboard.
 
+[![NuGet Version](https://img.shields.io/nuget/v/Hangfire.Dashboard.Customize.svg?style=flat)](https://www.nuget.org/packages/Hangfire.Dashboard.Customize/) [![Stack Overflow](https://img.shields.io/badge/stack%20overflow-hangfire-orange.svg)](http://stackoverflow.com/questions/tagged/hangfire)
+
 ![Hangfire.Dashboard.Customize screenshot](assets/hangfire-dashboard-customize-small.png)
+
+</div>
 
 ## Give a Star! :star:
 
 If you like or are using this project please give it a star. Thanks!
 
-## Getting started
+## Getting started :rocket:
 
 Install the [Hangfire.Dashboard.Customize](https://www.nuget.org/packages/Hangfire.Dashboard.Customize/) package from NuGet:
 
