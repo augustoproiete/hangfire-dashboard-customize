@@ -22,7 +22,8 @@ namespace Hangfire
     {
         private readonly RequestDelegate _next;
         private readonly HangfireDashboardCustomOptions _options;
-        private readonly Regex _titleRegex = new Regex(@"(\s*)(Hangfire\ Dashboard)(\s*)", RegexOptions.Compiled);
+        private readonly Regex _browserTitleRegex = new Regex(@"(<title>.*\s*\-?\s*)(Hangfire|Hangfire\s+Dashboard)(\s*</title>)", RegexOptions.Compiled);
+        private readonly Regex _dashboardTitleRegex = new Regex(@"(>\s*)(Hangfire\ Dashboard)(\s*<)", RegexOptions.Compiled);
 
         public HangfireDashboardCustomOptionsMiddleware(RequestDelegate next, HangfireDashboardCustomOptions options)
         {
@@ -74,22 +75,53 @@ namespace Hangfire
                     newContent = await reader.ReadToEndAsync();
                 }
 
-                var newBrowserTitle = _options?.BrowserTitle?.Invoke();
-                var newDashboardTitle = _options?.DashboardTitle?.Invoke();
-
                 if (!string.IsNullOrWhiteSpace(newContent))
                 {
                     var indexOfBody = newContent.IndexOf("<body>", StringComparison.OrdinalIgnoreCase);
                     if (indexOfBody >= 0)
                     {
+                        var newBrowserTitle = _options?.BrowserTitle?.Invoke();
                         if (!string.IsNullOrWhiteSpace(newBrowserTitle))
                         {
-                            newContent = _titleRegex.Replace(newContent, $"$1{newBrowserTitle}$3", 1);
+                            newContent = _browserTitleRegex.Replace(newContent, $"$1{newBrowserTitle}$3", 1);
                         }
 
+                        var newDashboardTitle = _options?.DashboardTitle?.Invoke();
                         if (!string.IsNullOrWhiteSpace(newDashboardTitle))
                         {
-                            newContent = _titleRegex.Replace(newContent, $"$1{newDashboardTitle}$3", 1, indexOfBody);
+                            newContent = _dashboardTitleRegex.Replace(newContent, $"$1{newDashboardTitle}$3", 1, indexOfBody);
+                        }
+                    }
+
+                    var appendToHeadContent = _options?.AppendToHead?.Invoke();
+                    if (!string.IsNullOrWhiteSpace(appendToHeadContent))
+                    {
+                        var indexOfCloseHtmlHead = newContent.IndexOf("</head>", StringComparison.OrdinalIgnoreCase);
+                        if (indexOfCloseHtmlHead >= 0)
+                        {
+                            // Covers both \r\n and \n
+                            if (!appendToHeadContent.EndsWith("\n"))
+                            {
+                                appendToHeadContent += Environment.NewLine;
+                            }
+
+                            newContent = newContent.Insert(indexOfCloseHtmlHead, appendToHeadContent);
+                        }
+                    }
+
+                    var appendToBodyContent = _options?.AppendToBody?.Invoke();
+                    if (!string.IsNullOrWhiteSpace(appendToBodyContent))
+                    {
+                        var indexOfCloseHtmlBody = newContent.IndexOf("</body>", StringComparison.OrdinalIgnoreCase);
+                        if (indexOfCloseHtmlBody >= 0)
+                        {
+                            // Covers both \r\n and \n
+                            if (!appendToBodyContent.EndsWith("\n"))
+                            {
+                                appendToBodyContent += Environment.NewLine;
+                            }
+
+                            newContent = newContent.Insert(indexOfCloseHtmlBody, appendToBodyContent);
                         }
                     }
                 }
