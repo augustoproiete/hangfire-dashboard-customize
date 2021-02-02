@@ -22,7 +22,7 @@ namespace Hangfire
     {
         private readonly RequestDelegate _next;
         private readonly HangfireDashboardCustomOptions _options;
-        private readonly Regex _titleRegex = new Regex(@"\s*Hangfire\ Dashboard\s*", RegexOptions.Compiled);
+        private readonly Regex _titleRegex = new Regex(@"(\s*)(Hangfire\ Dashboard)(\s*)", RegexOptions.Compiled);
 
         public HangfireDashboardCustomOptionsMiddleware(RequestDelegate next, HangfireDashboardCustomOptions options)
         {
@@ -74,10 +74,24 @@ namespace Hangfire
                     newContent = await reader.ReadToEndAsync();
                 }
 
-                var newDashboardTitle = _options?.DashboardTitle();
-                if (!string.IsNullOrWhiteSpace(newDashboardTitle))
+                var newBrowserTitle = _options?.BrowserTitle?.Invoke();
+                var newDashboardTitle = _options?.DashboardTitle?.Invoke();
+
+                if (!string.IsNullOrWhiteSpace(newContent))
                 {
-                    newContent = _titleRegex.Replace(newContent, newDashboardTitle);
+                    var indexOfBody = newContent.IndexOf("<body>", StringComparison.OrdinalIgnoreCase);
+                    if (indexOfBody >= 0)
+                    {
+                        if (!string.IsNullOrWhiteSpace(newBrowserTitle))
+                        {
+                            newContent = _titleRegex.Replace(newContent, $"$1{newBrowserTitle}$3", 1);
+                        }
+
+                        if (!string.IsNullOrWhiteSpace(newDashboardTitle))
+                        {
+                            newContent = _titleRegex.Replace(newContent, $"$1{newDashboardTitle}$3", 1, indexOfBody);
+                        }
+                    }
                 }
 
                 await context.Response.WriteAsync(newContent);
